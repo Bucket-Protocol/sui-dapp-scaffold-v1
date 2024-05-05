@@ -21,7 +21,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   useEffect(() => {
     setIsClient(true);
-    registerZkSendWallet("Sui Dapp Scaffolding", {});
+    registerZkSendWallet("Sui Dapp Scaffold", {});
   }, []);
 
   return (

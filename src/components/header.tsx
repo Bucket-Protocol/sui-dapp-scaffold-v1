@@ -23,7 +23,7 @@ const Header = () => {
       <header className="w-full max-w-360 mx-auto h-20 flex items-center justify-between pt-5 pb-3 px-4 z-50">
         {/* Logo Link */}
         <span className="text-xl lg:text-4xl font-extrabold">
-          Sui Dapp Scaffolding
+          Sui Dapp Scaffold
         </span>
         {/* Connect Button */}
         {walletAddress ? (

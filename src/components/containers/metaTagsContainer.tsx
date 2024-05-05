@@ -5,7 +5,7 @@ import MetaThumbnail from "/public/images/bucket-app-og-image.png";
 const MetaTagsContainer = () => {
   const router = useRouter();
   //Set your product name, description, twitter account, and metadata image path
-  const name = "Sui Dapp Scaffolding";
+  const name = "Sui Dapp Scaffold";
   const description = "Product description";
   const twitterAccount = "@bucket_protocol";
   const metadataImagePath = `http://localhost:3000${MetaThumbnail.src}`;

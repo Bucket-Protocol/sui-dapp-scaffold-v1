@@ -7,11 +7,13 @@ import {
 import { useEffect, useState } from "react";
 import { useUserStore } from "@/stores/useUserStore";
 import { NetworkIcon } from "lucide-react";
-import { RPC_NODES } from "@/constants/rpcNodeList";
+import { getRpcNodes } from "@/constants/rpcNodeList";
+
+const network = 'mainnet';
 
 const RpcMenu = () => {
   const [timer, setTimer] = useState<NodeJS.Timeout>();
-  const [rpcNodes, setRpcNodes] = useState<RpcNode[]>(RPC_NODES);
+  const [rpcNodes, setRpcNodes] = useState<RpcNode[]>(getRpcNodes(network));
   const { rpcUrl, setRpcUrl } = useUserStore();
 
   useEffect(() => {
@@ -63,7 +65,7 @@ const RpcMenu = () => {
   };
 
   const loadLatencies = async () => {
-    await Promise.all(RPC_NODES.map((t) => loadLatency(t)));
+    await Promise.all(getRpcNodes(network).map((t) => loadLatency(t)));
   };
 
   return (

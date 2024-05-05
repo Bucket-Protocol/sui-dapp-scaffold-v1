@@ -1,17 +1,23 @@
-export const RPC_NODES: RpcNode[] = [
-  {
-    name: "Sui Official",
-    url: "https://fullnode.mainnet.sui.io/",
-    latency: 0,
-  },
-  {
-    name: "Blockvision",
-    url: "https://sui-mainnet-endpoint.blockvision.org/",
-    latency: 0,
-  },
-  {
-    name: "Suiscan",
-    url: "https://rpc-mainnet.suiscan.xyz/",
-    latency: 0,
-  },
-];
+export function getRpcNodes(network: 'mainnet' | 'testnet' | 'devnet'): RpcNode[] {
+  const suiscanRpc = network === 'devnet' ?
+    "https://suiscan.xyz/api/sui/devnet/":
+    `https://rpc-${network}.suiscan.xyz/`;
+  
+  return [
+    {
+      name: "Sui Official",
+      url: `https://fullnode.${network}.sui.io/`,
+      latency: 0,
+    },
+    {
+      name: "Blockvision",
+      url: `https://sui-${network}-endpoint.blockvision.org/`,
+      latency: 0,
+    },
+    {
+      name: "Suiscan",
+      url: suiscanRpc,
+      latency: 0,
+    },
+  ];
+}
