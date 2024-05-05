@@ -24,7 +24,7 @@ const BasicDataField = ({
   labelClass,
   tooltip = undefined,
   value,
-  valueClass = "text-2xl font-bucket !leading-[110%] -tracking-[0.72px] text-white",
+  valueClass = "text-2xl font-medium !leading-[110%] -tracking-[0.72px] text-white",
   fieldClass = "w-fit",
   ...props
 }: IBasicDataFieldProps) => {
@@ -74,7 +74,7 @@ const BasicDataField = ({
             WebkitBackdropFilter: "blur(12px)",
           }}
         >
-          <span className="text-sm font-bucket !leading-[110%] -tracking-[0.14px]">
+          <span className="text-sm font-medium !leading-[110%] -tracking-[0.14px]">
             {tooltip.label}
           </span>
           <p className="mt-1 text-pretty text-xs text-white">

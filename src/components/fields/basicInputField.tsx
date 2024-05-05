@@ -111,7 +111,7 @@ const BasicInputField = ({
           <input
             type="text"
             inputMode="decimal"
-            className="w-full h-9 md:h-12 bg-transparent text-[28px] md:text-[40px] font-bucket leading-normal -tracking-[0.28px] md:-tracking-[0.4px] text-white caret-white placeholder:text-white/50 focus:outline-none ring-0"
+            className="w-full h-9 md:h-12 bg-transparent text-[28px] md:text-[40px] font-medium leading-normal -tracking-[0.28px] md:-tracking-[0.4px] text-white caret-white placeholder:text-white/50 focus:outline-none ring-0"
             placeholder={"0.00"}
             min="0"
             minLength={1}
@@ -147,7 +147,7 @@ const BasicInputField = ({
                     width={40}
                     height={40}
                   />
-                  <span className="px-1 text-[28px] md:text-[40px] font-bucket leading-normal -tracking-[0.28px] md:-tracking-[1.2px] text-white">
+                  <span className="px-1 text-[28px] md:text-[40px] font-medium leading-normal -tracking-[0.28px] md:-tracking-[1.2px] text-white">
                     {TOKEN_LIST[selectedToken as BasicCoin]?.symbol ?? "USDC"}
                   </span>
                 </SelectTrigger>
@@ -179,7 +179,7 @@ const BasicInputField = ({
                 width={40}
                 height={40}
               />
-              <span className="w-full text-[28px] md:text-[40px] font-bucket leading-normal -tracking-[0.28px] md:-tracking-[1.2px] text-white">
+              <span className="w-full text-[28px] md:text-[40px] font-medium leading-normal -tracking-[0.28px] md:-tracking-[1.2px] text-white">
                 {TOKEN_LIST[tokenInfo[0]]?.symbol}
               </span>
             </div>
@@ -201,7 +201,7 @@ const BasicInputField = ({
               <>{subFooterControlPanel}</>
             ) : (
               <button className="h-fit self-end" onClick={handleMax}>
-                <span className="text-xs font-bucket !leading-[100%] text-white/50 xl:hover:text-white xl:duration-300 xl:ease-in-out">
+                <span className="text-xs font-medium !leading-[100%] text-white/50 xl:hover:text-white xl:duration-300 xl:ease-in-out">
                   Max
                 </span>
               </button>

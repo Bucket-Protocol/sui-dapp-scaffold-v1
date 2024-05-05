@@ -1,13 +1,13 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import MetaThumbnail from "/public/images/bucket-app-og-image.png";
+import MetaThumbnail from "/public/images/app-og-image.png";
 
 const MetaTagsContainer = () => {
   const router = useRouter();
   //Set your product name, description, twitter account, and metadata image path
   const name = "Sui Dapp Scaffold";
   const description = "Product description";
-  const twitterAccount = "@bucket_protocol";
+  const twitterAccount = "@yourTwitterAccount";
   const metadataImagePath = `http://localhost:3000${MetaThumbnail.src}`;
   const pathname = router.pathname;
   const page = pathname.split("/")[1] ?? "";

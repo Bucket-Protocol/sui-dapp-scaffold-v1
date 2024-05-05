@@ -35,7 +35,7 @@ const ActionButton = ({
             disabled={disabled}
             style={buttonStyle}
           >
-            <span className="text-black lg:text-lg font-bucket !leading-[110%] -tracking-[0.16px] lg:-tracking-[0.18px]">
+            <span className="text-black lg:text-lg font-medium !leading-[110%] -tracking-[0.16px] lg:-tracking-[0.18px]">
               Connect wallet
             </span>
             <Link size={17} className="text-black" />
@@ -60,7 +60,7 @@ const ActionButton = ({
       ) : (
         <span
           className={cn(
-            "text-black lg:text-lg font-bucket !leading-[110%] -tracking-[0.16px] lg:-tracking-[0.18px]",
+            "text-black lg:text-lg font-medium !leading-[110%] -tracking-[0.16px] lg:-tracking-[0.18px]",
             contentClass
           )}
         >
