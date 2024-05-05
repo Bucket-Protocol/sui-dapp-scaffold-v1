@@ -4,9 +4,7 @@ Your super kit to build dApp on Sui
 
 This project provides a frontend scaffold for a decentralized application (dApp) on the Sui blockchain. It uses next.js page router, shadcn/ui for UI library, @mysten/dapp-kit for interacting with Sui contracts, and bucket-protocol-SDK for additional blockchain interactions.
 
-<img width="1511" alt="image" src="https://github.com/Bucket-Protocol/sui-dapp-scaffold-v1/assets/50972884/9b142fdb-68ef-4340-b8c9-9c0180245427">
-
-
+<img width="1512" alt="image" src="https://github.com/Bucket-Protocol/sui-dapp-scaffold-v1/assets/50972884/7ba8fa56-e0e7-4f4f-a8ee-75a97688b18c">
 
 Powered by Bucket Protocol.
 
