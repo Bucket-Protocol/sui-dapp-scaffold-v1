@@ -1,8 +1,9 @@
-export function getRpcNodes(network: 'mainnet' | 'testnet' | 'devnet'): RpcNode[] {
-  const suiscanRpc = network === 'devnet' ?
-    "https://suiscan.xyz/api/sui/devnet/":
-    `https://rpc-${network}.suiscan.xyz/`;
-  
+export function getRpcNodes(network: Network): RpcNode[] {
+  const suiscanRpc =
+    network === "devnet"
+      ? "https://suiscan.xyz/api/sui/devnet/"
+      : `https://rpc-${network}.suiscan.xyz/`;
+
   return [
     {
       name: "Sui Official",

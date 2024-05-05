@@ -16,6 +16,7 @@ import useMeidaSize from "@/hooks/useMediaSize";
 import { ClipboardCopyIcon } from "lucide-react";
 import { toast } from "react-toastify";
 import RpcMenu from "./rpcMenu";
+import NetworkMenu from "./networkMenu";
 
 const ConnectMenu = ({
   walletAddress,
@@ -92,6 +93,8 @@ const ConnectMenu = ({
               </button>
             </Link>
           </DropdownMenuItem>
+          {/* Network Setting */}
+          <NetworkMenu />
           {/* RPC Setting */}
           <RpcMenu />
           {/* <DropdownMenuSeparator className="bg-white h-[1px] w-full m-0 p-0" /> */}

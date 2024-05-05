@@ -5,6 +5,8 @@ type RpcNode = {
   latency: number;
 };
 
+type Network = "mainnet" | "testnet" | "devnet";
+
 type TokenInfo = {
   token: COIN;
   symbol: string;

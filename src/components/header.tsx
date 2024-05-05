@@ -7,6 +7,8 @@ import { ConnectModal } from "@mysten/dapp-kit";
 import ConnectMenu from "./ui/connectMenu";
 import "@mysten/dapp-kit/dist/index.css";
 import { AppContext } from "@/context/AppContext";
+import { Link as LinkIcon } from "lucide-react";
+
 // import SlideInMenu from "./slideInMenu";
 // import RpcSetting from "./rpcSetting";
 
@@ -39,12 +41,7 @@ const Header = () => {
                   <span className="text-sm">
                     {walletAddress ? "Connected" : "Connect Wallet"}
                   </span>
-                  <Image
-                    src="/images/link-icon.svg"
-                    alt="link icon"
-                    width={14}
-                    height={14}
-                  />
+                  <LinkIcon size={17} className="text-white" />
                 </div>
               </button>
             }

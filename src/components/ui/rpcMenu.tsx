@@ -8,8 +8,9 @@ import { useEffect, useState } from "react";
 import { useUserStore } from "@/stores/useUserStore";
 import { NetworkIcon } from "lucide-react";
 import { getRpcNodes } from "@/constants/rpcNodeList";
+import { Link } from "lucide-react";
 
-const network = 'mainnet';
+const network = "mainnet";
 
 const RpcMenu = () => {
   const [timer, setTimer] = useState<NodeJS.Timeout>();
