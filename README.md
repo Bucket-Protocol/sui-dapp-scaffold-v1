@@ -21,3 +21,39 @@ Powered by Bucket Protocol.
 
 * Headless, fully customizable UI component
 * Save 80% of the initial setting time. You can build your project/product way faster
+
+## Components
+* Basic series
+  * BasicDataField
+    ```Typescript
+    import BasicDataField from "@/components/fields/basicDataField";
+    
+    <BasicDataField
+      label="Your Wallet Balance"
+      value={userBalance ?? "0.0000"}
+      spaceWithUnit
+      unit="SUI"
+      minFractionDigits={0}
+    />
+    ```
+    <img width="165" alt="image" src="https://github.com/Bucket-Protocol/sui-dapp-scaffold-v1/assets/50972884/8a900e28-7576-43d8-9f57-1655ee96adc3">
+
+  * BasicInputField
+    ```Typescript
+    import BasicInputField from "@/components/fields/basicInputField";
+    
+    <BasicInputField
+      label="Input"
+      inputValue={value}
+      setInputValue={setInputValue}
+      tokenInfo={["SUI", "BUCK", "USDC", "USDT"]}
+      canSelectToken={true}
+      selectedToken={selectedToken}
+      setSelectedToken={setSelectedToken}
+      maxValue={0.0}
+    />
+    ```
+    <img width="1202" alt="image" src="https://github.com/Bucket-Protocol/sui-dapp-scaffold-v1/assets/50972884/b6e23e4b-2369-498e-a409-9e5821ccf8d6">
+
+* MetaTagsContainer
+  * Open graph metadata is a key point for a web app. Most common settings are gathered in this component.
