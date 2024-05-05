@@ -54,6 +54,13 @@ Powered by Bucket Protocol.
     />
     ```
     <img width="1202" alt="image" src="https://github.com/Bucket-Protocol/sui-dapp-scaffold-v1/assets/50972884/b6e23e4b-2369-498e-a409-9e5821ccf8d6">
+* ConnectMenu
+  ```Typescript
+  import ConnectMenu from "@/components/ui/connectMenu";
+
+  <ConnectMenu walletAddress={walletAddress} suiName={suiName} />
+  ```
+  <img width="315" alt="image" src="https://github.com/Bucket-Protocol/sui-dapp-scaffold-v1/assets/50972884/e05dcae4-c163-4251-b413-e97bc226c9e9">
 
 * MetaTagsContainer
   * Open graph metadata is a key point for a web app. Most common settings are gathered in this component.
