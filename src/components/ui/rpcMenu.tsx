@@ -6,7 +6,7 @@ import {
 } from "./dropdown-menu";
 import { useEffect, useState } from "react";
 import { useUserStore } from "@/stores/useUserStore";
-import { NetworkIcon } from "lucide-react";
+import { NetworkIcon, Hexagon } from "lucide-react";
 import { getRpcNodes } from "@/constants/rpcNodeList";
 import { Link } from "lucide-react";
 
@@ -57,7 +57,7 @@ const RpcMenu = () => {
           }
 
           return t;
-        })
+        }),
       );
     } catch (ex) {
       console.log("ex", ex);
@@ -72,7 +72,7 @@ const RpcMenu = () => {
   return (
     <DropdownMenuSub onOpenChange={onOpenChange}>
       <DropdownMenuSubTriggerLeft className="w-full h-12 flex items-center justify-between rounded-lg pl-3.5 pr-2 py-2 text-black hover:bg-main-700 hover:text-white">
-        <NetworkIcon strokeWidth={2} className="h-4 w-4 text-white mr-2" />
+        <Hexagon strokeWidth={2} className="h-4 w-4 text-white mr-2" />
         <span className="text-sm text-white">RPC Setting</span>
       </DropdownMenuSubTriggerLeft>
       <DropdownMenuSubContent
