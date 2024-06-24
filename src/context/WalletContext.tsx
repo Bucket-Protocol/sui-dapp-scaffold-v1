@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { getFullnodeUrl } from "@mysten/sui.js/client";
 import {
   SuiClientProvider,
   WalletProvider,
@@ -29,6 +28,9 @@ const SuiWalletProvider = ({ children }: Props) => {
           storage={localStorage as StateStorage}
           storageKey="sui-wallet"
           preferredWallets={["Sui Wallet"]}
+          stashedWallet={{
+            name: 'Bucket Protocol',
+          }}
         >
           {children}
         </WalletProvider>
