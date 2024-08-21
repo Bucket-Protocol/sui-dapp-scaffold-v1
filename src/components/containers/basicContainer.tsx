@@ -2,7 +2,12 @@ import BasicDataField from "../fields/basicDataField";
 import BasicInputField from "../fields/basicInputField";
 import ActionButton from "../buttons/actionButton";
 import { useContext, useMemo, useState } from "react";
-import { useAccounts, useSuiClient, useSuiClientQuery } from "@mysten/dapp-kit";
+import {
+  useAccounts,
+  useSignAndExecuteTransaction,
+  useSuiClient,
+  useSuiClientQuery,
+} from "@mysten/dapp-kit";
 import { AppContext } from "@/context/AppContext";
 
 const BasicContainer = () => {
@@ -13,6 +18,18 @@ const BasicContainer = () => {
   const [selectedToken, setSelectedToken] = useState<string>("SUI");
   const client = useSuiClient();
   const [account] = useAccounts();
+  const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction({
+    execute: async ({ bytes, signature }) => {
+      return await client.executeTransactionBlock({
+        transactionBlock: bytes,
+        signature,
+        options: {
+          showEffects: true,
+          showObjectChanges: true,
+        },
+      });
+    },
+  });
 
   const userBalance = useMemo(() => {
     if (suiBalance?.totalBalance) {
