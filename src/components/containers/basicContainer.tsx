@@ -8,6 +8,7 @@ import {
   useSuiClient,
   useSuiClientQuery,
 } from "@mysten/dapp-kit";
+import { Transaction } from "@mysten/sui/transactions";
 import { AppContext } from "@/context/AppContext";
 
 const BasicContainer = () => {
