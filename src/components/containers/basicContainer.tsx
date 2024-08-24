@@ -10,6 +10,7 @@ import {
 } from "@mysten/dapp-kit";
 import { Transaction } from "@mysten/sui/transactions";
 import { AppContext } from "@/context/AppContext";
+import { toast } from "react-toastify";
 
 const BasicContainer = () => {
   const { walletAddress, suiName } = useContext(AppContext);
@@ -19,18 +20,7 @@ const BasicContainer = () => {
   const [selectedToken, setSelectedToken] = useState<string>("SUI");
   const client = useSuiClient();
   const [account] = useAccounts();
-  const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction({
-    execute: async ({ bytes, signature }) => {
-      return await client.executeTransactionBlock({
-        transactionBlock: bytes,
-        signature,
-        options: {
-          showEffects: true,
-          showObjectChanges: true,
-        },
-      });
-    },
-  });
+  const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction();
 
   const userBalance = useMemo(() => {
     if (suiBalance?.totalBalance) {
@@ -39,6 +29,45 @@ const BasicContainer = () => {
       return 0;
     }
   }, [suiBalance]);
+
+  async function handleTx() {
+    const tx = new Transaction();
+
+    // PTB part
+
+    // Dry run
+    tx.setSender(account.address);
+    const dryRunRes = await client.dryRunTransactionBlock({
+      transactionBlock: await tx.build({ client }),
+    });
+    if (dryRunRes.effects.status.status === "failure") {
+      toast.error(dryRunRes.effects.status.error);
+      return;
+    }
+
+    // Execute
+    signAndExecuteTransaction(
+      {
+        transaction: tx,
+      },
+      {
+        onSuccess: async (txRes) => {
+          const finalRes = await client.waitForTransaction({
+            digest: txRes.digest,
+            options: {
+              showEffects: true,
+            },
+          });
+          toast.success("Tx Success!");
+          console.log(finalRes);
+        },
+        onError: (err) => {
+          toast.error(err.message);
+          console.log(err);
+        },
+      },
+    );
+  }
 
   return (
     <div className="w-[80%] flex flex-col items-center justify-center gap-4">
@@ -63,7 +92,7 @@ const BasicContainer = () => {
         label="Get Buck"
         isConnected={true}
         isLoading={false}
-        onClick={() => console.log("Go to Bucket!")}
+        onClick={handleTx}
         buttonClass="w-40"
       />
     </div>
