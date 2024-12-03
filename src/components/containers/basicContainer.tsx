@@ -18,6 +18,7 @@ const BasicContainer = () => {
     owner: walletAddress ?? "",
   });
   const [selectedToken, setSelectedToken] = useState<string>("SUI");
+  const [input, setInput] = useState<string>("");
   const client = useSuiClient();
   const [account] = useAccounts();
   const { mutate: signAndExecuteTransaction } = useSignAndExecuteTransaction();
@@ -31,6 +32,7 @@ const BasicContainer = () => {
   }, [suiBalance]);
 
   async function handleTx() {
+    console.log(input);
     const tx = new Transaction();
 
     // PTB part
@@ -81,7 +83,7 @@ const BasicContainer = () => {
       <BasicInputField
         label="Input"
         inputValue="0.0000"
-        setInputValue={(value) => console.log(value)}
+        setInputValue={(value) => setInput(value)}
         tokenInfo={["SUI", "BUCK", "USDC", "USDT"]}
         canSelectToken={true}
         selectedToken={selectedToken}

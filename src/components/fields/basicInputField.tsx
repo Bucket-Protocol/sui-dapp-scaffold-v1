@@ -90,7 +90,7 @@ const BasicInputField = ({
       <div
         className={cn(
           "w-full flex items-center justify-between",
-          noHeader && "hidden"
+          noHeader && "hidden",
         )}
       >
         {/* Label */}
@@ -104,7 +104,7 @@ const BasicInputField = ({
         <div
           className={cn(
             "w-full flex items-center",
-            (subInfo || !isReadOnly) && "gap-1"
+            (subInfo || !isReadOnly) && "gap-1",
           )}
         >
           {/* Input field */}
@@ -191,7 +191,7 @@ const BasicInputField = ({
             "w-full flex items-center",
             subInfo ? "justify-between" : "justify-end",
             subInfo || !isReadOnly ? "h-fit" : "h-4.5",
-            noFooter && "hidden"
+            noFooter && "hidden",
           )}
         >
           {subInfo}
